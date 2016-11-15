@@ -2,7 +2,7 @@ import dotbot
 
 class Rust(dotbot.Plugin):
     def __init__(self, context):
-        super(Rust, self).__init__(self, context)
+        super(Rust, self).__init__(context)
         self._directives = {
             "rust": self._handle_rust,
             "cargo": self._handle_cargo
