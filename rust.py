@@ -1,10 +1,11 @@
 import dotbot
 
 class Rust(dotbot.Plugin):
-    _directives = {
-        "rust": handle_rust,
-        "cargo": handle_cargo
-    }
+    def __init__(self):
+        _directives = {
+            "rust": self._handle_rust,
+            "cargo": self._handle_cargo
+        }
 
     def can_handle(self, directive):
         return directive in self._directives
@@ -15,10 +16,10 @@ class Rust(dotbot.Plugin):
         except KeyError:
             return False
 
-    def handle_rust(self, data):
+    def _handle_rust(self, data):
         self._log.info("Handling Rust toolchain: {}".format(data))
         return False
 
-    def handle_cargo(self, data):
+    def _handle_cargo(self, data):
         self._log.info("Handling Cargo package: {}".format(data))
         return False
