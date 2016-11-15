@@ -1,7 +1,7 @@
 # Dotbot Rust Plugin
 
 This is a plugin for [Dotbot][dotbot] that handles installing [Rust][rust].
-It also allows the installation other [rustup][rustup] components, as well as other Rust software with [cargo][cargo].
+It also allows the installation other [rustup][rustup] components, as well as other Rust software with [Cargo][cargo].
 
 ## Installation
 
