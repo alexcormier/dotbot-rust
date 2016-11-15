@@ -12,6 +12,7 @@ class Rust(dotbot.Plugin):
 
     def handle(self, directive, data):
         try:
+            self._log.info("Handling directive: {}".format(directive))
             return self._directives[directive](data)
         except KeyError:
             return False
