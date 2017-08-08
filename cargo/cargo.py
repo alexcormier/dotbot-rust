@@ -44,7 +44,7 @@ class Cargo(dotbot.Plugin):
         return False
 
     def _run_cargo_command(self, binary, args, devnull):
-        cmd = ' '.join('cargo install {} {}'.format(args, binary).split())
+        cmd = ' '.join('cargo install --force {} {}'.format(args, binary).split())
         self._log.info('Installing Rust binary: {} [{}]'.format(binary, cmd))
         result = subprocess.run(cmd, shell=True, stdin=devnull, stdout=devnull, stderr=subprocess.PIPE, cwd=self._context.base_directory())
         return self._check_cargo_command_output(binary, result)
