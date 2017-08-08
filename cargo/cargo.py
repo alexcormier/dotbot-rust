@@ -51,6 +51,7 @@ class Cargo(dotbot.Plugin):
 
     def _check_cargo_command_output(self, binary, result):
         if result.returncode != 0:
+            self._log.error(result.stderr.decode())
             self._log.warning('Rust binary {} could not be installed'.format(binary))
             return False
         return True
