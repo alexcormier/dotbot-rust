@@ -13,7 +13,10 @@ class DictItemHandler(ItemHandler):
             return _error()
         for arg in item[binary]:
             if isinstance(arg, str):
-                args += ' --{}'.format(arg)
+                if arg[0]=="+":
+                    args="{} {}".format(arg,args).strip()
+                else:
+                    args += ' --{}'.format(arg)
             elif isinstance(arg, dict):
                 if len(item) != 1:
                     return _error()
