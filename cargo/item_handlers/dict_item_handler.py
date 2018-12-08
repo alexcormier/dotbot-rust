@@ -13,8 +13,8 @@ class DictItemHandler(ItemHandler):
             return _error()
         for arg in item[binary]:
             if isinstance(arg, str):
-                if arg[0]=="+":
-                    args="{} {}".format(arg,args).strip()
+                if arg[0] == '+':
+                    args = '{} {}'.format(arg, args)
                 else:
                     args += ' --{}'.format(arg)
             elif isinstance(arg, dict):
